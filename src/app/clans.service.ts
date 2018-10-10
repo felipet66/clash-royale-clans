@@ -18,5 +18,9 @@ export class ClansService {
   public getClanPorNome(termo: string): Observable<Clan[]> {
     return this.httpc.get<Clan[]>(`https://api.royaleapi.com/clan/search?name=${termo}`, this.httpOptions);
   }
+
+  public getClanPorTag(tag: string): Observable<Clan[]> {
+    return this.httpc.get<Clan[]>(`https://api.royaleapi.com/clan/${tag}`, this.httpOptions);
+  }
 }
 

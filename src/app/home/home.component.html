@@ -41,7 +41,7 @@
         <div class="couche2">
           <div class="couche3">
             <div class="couche4">
-              <a href="#" class="battle text-white">Detalhes</a>
+              <a [routerLink]="['/clan', clan.tag]" class="battle text-white" (click)="getClanPorTag()">Detalhes</a>
             </div>
           </div>
         </div>

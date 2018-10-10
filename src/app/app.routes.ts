@@ -4,5 +4,6 @@ import { ClanComponent } from './clan/clan.component';
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
-  { path: '/clan/:tag', component: ClanComponent}
+  { path: 'clan', component: ClanComponent },
+  { path: 'clan/:tag' , component: ClanComponent }
 ];

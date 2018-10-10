@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClansService } from '../clans.service';
 import { Clan } from '../model/clan.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
     'nome': new FormControl(null, [ Validators.required, Validators.minLength(6), Validators.maxLength(15) ])
   });
 
-  constructor(private clansService: ClansService) { }
+  constructor(private route: ActivatedRoute, private clansService: ClansService) { }
 
   ngOnInit() {
     console.log( this.clan );
@@ -28,6 +29,28 @@ export class HomeComponent implements OnInit {
       this.formulario.get('nome').markAsTouched();
     }
     this.getClanPorNome(this.formulario.value.nome);
+  }
+
+  getClanPorTag(): void {
+    this.route.params.subscribe((parametro: any) => {
+      this.clansService.getClanPorTag(parametro).subscribe
+      (result => {
+        if ( result.length === 0 ) {
+          console.log('NENHUM CLAN');
+          this.clan = [];
+        } else {
+          this.clan = result;
+          console.log( result );
+        }
+      },
+      (erro: any) => {
+        console.log( erro.message );
+      },
+      () => {
+        console.log( 'complete' );
+      }
+    );
+    });
   }
 
   getClanPorNome(termoDaBusca: string): void {
