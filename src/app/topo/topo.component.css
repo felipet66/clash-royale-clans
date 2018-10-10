@@ -1,0 +1,17 @@
+
+#titre{
+	margin : 0 auto;
+	border-bottom:5px solid black;
+	width:320px;
+  font-size:39px;
+	font-family: "bungee",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+	color:white;
+	text-shadow: -1px 0 1px #582E00,
+             	1px 0 1px #582E00,
+             	0 -1px 1px #582E00,
+             	0 4px 1px #582E00,
+             	-2px 4px 1px #582E00,
+             	2px 3px 2px #582E00;
+}
