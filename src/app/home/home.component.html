@@ -6,12 +6,18 @@
       <div class="form-group">
         <input
         type="text"
-        class="form-control"
+        class="form-control text-center"
         placeholder="Digite o nome do Clan"
         autocomplete="off"
         formControlName="nome">
-        <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-center text-ok">Muito bem! Clique em pesquisar!</small>
-        <small *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-center text-error">Oops! Parece que tem algo errado!</small>
+        <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-center text-ok">
+          <img src="https://vignette.wikia.nocookie.net/clashroyale/images/c/c6/NjYGbT7.gif" style="width: 60px;" alt="">
+          Muito bem! Clique em pesquisar!
+        </small>
+        <small *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-center text-error">
+          <img src="https://clashroyalecardmaker.com/img/donate/CryingKing.png" style="width: 45px;" alt="">
+          Oops! Parece que tem algo errado!
+        </small>
       </div>
       <div class="couche1 pesquisa">
         <div class="couche2">
@@ -41,7 +47,7 @@
         <div class="couche2">
           <div class="couche3">
             <div class="couche4">
-              <a [routerLink]="['/clan', clan.tag]" class="battle text-white" (click)="getClanPorTag()">Detalhes</a>
+              <a [routerLink]="['/clan', clan.tag]" class="battle text-white">Detalhes</a>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/css?family=Bungee';
 body{
   margin:0;
   padding:0;
@@ -9,4 +10,9 @@ body{
   linear-gradient(60deg,rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
   linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
   background-size: 180px 305px;
+}
+
+*{
+  font-family: "bungee",sans-serif;
+  font-style: normal;
 }
