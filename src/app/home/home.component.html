@@ -2,8 +2,49 @@
   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4"><br>
-      <div class="form-label-group">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Digite o nome do Clan" required="" autofocus="">
+      <form [formGroup]="formulario" novalidate (ngSubmit)="buscarClansNome()">
+      <div class="form-group">
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Digite o nome do Clan"
+        autocomplete="off"
+        formControlName="nome">
+        <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-center text-ok">Muito bem! Clique em pesquisar!</small>
+        <small *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-center text-error">Oops! Parece que tem algo errado!</small>
+      </div>
+      <div class="couche1 pesquisa">
+        <div class="couche2">
+          <div class="couche3">
+            <div class="couche4">
+              <button
+              type="submit"
+              class="battle"
+              [disabled]="!formulario.valid">Pesquisar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row" *ngIf="clan !== undefined" style="position:relative; bottom: 100px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 text-center">
+      <img src="https://royaleapi.github.io/cr-api-assets/badges/Skull_06.png" class="img-responsive" style="margin: 0 auto; z-index: 999;">
+      <h5 class="text-white">Nome: {{ clan.name }}</h5>
+      <p class="text-white">Tag: {{ clan.tag }} <br>
+          Membros: {{ clan.memberCount }}
+      </p>
+      <div class="couche1" style="bottom: 40px;">
+        <div class="couche2">
+          <div class="couche3">
+            <div class="couche4">
+              <a href="#" class="battle text-white">Detalhes</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-sm-4"></div>
