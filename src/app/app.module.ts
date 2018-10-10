@@ -7,13 +7,15 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClanComponent } from './clan/clan.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopoComponent,
     RodapeComponent,
-    HomeComponent
+    HomeComponent,
+    ClanComponent
   ],
   imports: [
     BrowserModule,
