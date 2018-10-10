@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.clansService.getClanPorNome(termoDaBusca).subscribe
       (result => {
         if ( result.length === 0 ) {
-          console.log('NENHUMA OFERTA');
+          console.log('NENHUM CLAN');
           this.clan = [];
         } else {
           this.clan = result;
