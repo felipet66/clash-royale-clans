@@ -4,4 +4,5 @@ export class Clan {
   public descricao: string;
   public imagem: string;
   public membros: number;
+  public members: Array<object>;
 }
