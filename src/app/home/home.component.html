@@ -31,13 +31,17 @@
           </div>
         </div>
       </div>
+      <small *ngIf="messageError !== ''" class="form-text text-center text-error">
+        <img src="https://clashroyalecardmaker.com/img/donate/CryingKing.png" style="width: 45px;" alt="">
+        {{ messageError }}
+      </small>
       </form>
     </div>
     <div class="col-sm-4"></div>
   </div>
   <div class="row" *ngIf="clan !== undefined" style="position:relative; bottom: 100px;">
     <div class="col-sm-4"></div>
-    <div class="col-sm-4 text-center">
+    <div class="col-sm-4 text-center" *ngIf="messageError == ''">
       <img src="https://royaleapi.github.io/cr-api-assets/badges/Skull_06.png" class="img-responsive" style="margin: 0 auto; z-index: 999;">
       <h5 class="text-white">Nome: {{ clan.name }}</h5>
       <p class="text-white">Tag: {{ clan.tag }} <br>

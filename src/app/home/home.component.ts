@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   public clan: Clan[];
   public nomeClan: string;
-  public tagClan: string;
+  public messageError: string;
   public formulario: FormGroup = new FormGroup({
     'nome': new FormControl(null, [ Validators.required, Validators.minLength(6), Validators.maxLength(15) ])
   });
@@ -35,10 +35,11 @@ export class HomeComponent implements OnInit {
       (result => {
         if ( result.length === 0 ) {
           console.log('NENHUM CLAN');
+          this.messageError = 'Não foi possível encontrar nenhum clan com este nome!';
           this.clan = [];
         } else {
+          this.messageError = '';
           this.clan = result;
-          console.log( result );
         }
       },
       (erro: any) => {
