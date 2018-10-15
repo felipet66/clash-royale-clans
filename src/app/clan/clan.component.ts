@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ClanComponent implements OnInit {
   public clan: Clan[];
+  public members: Array<object>;
 
   constructor(private route: ActivatedRoute, private clansService: ClansService) { }
 
@@ -24,9 +25,10 @@ export class ClanComponent implements OnInit {
         result => {
         if ( result.length === 0 ) {
           console.log('NENHUM CLAN');
+          this.members = [];
           this.clan = [];
         } else {
-          console.log( result );
+          this.members = result.members;
           this.clan = result;
         }
       },
@@ -34,7 +36,7 @@ export class ClanComponent implements OnInit {
         console.log( erro.message );
       },
       () => {
-        console.log( 'complete' );
+        // console.log( 'complete' );
       }
     );
     });

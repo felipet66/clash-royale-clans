@@ -1,11 +1,12 @@
-<div class="container" style="border: 1px solid red;">
+<div class="container">
   <div class="row">
     <div class="col-sm-4"></div>
-    <div class="col-sm-5">
+    <div class="col-sm-5" *ngIf="clan !== undefined">
       <h1 class="text-white">{{ clan.name }}</h1>
-      <h4 class="text-white" style="text-align: center;">{{ clan.description }}</h4>
+      <h4 class="text-white">{{ clan.description }}</h4>
+      <h1 class="text-white">- Membros -</h1>
+      <h4 class="text-white" *ngFor="let member of members">{{ member.name }}</h4>
     </div>
     <div class="col-sm-2"></div>
-
   </div>
 </div>
