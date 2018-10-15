@@ -24,7 +24,6 @@ export class ClanComponent implements OnInit {
       this.clansService.getClanPorTag(parametro.tag).subscribe(
         result => {
         if ( result.length === 0 ) {
-          console.log('NENHUM CLAN');
           this.members = [];
           this.clan = [];
         } else {

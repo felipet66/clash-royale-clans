@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
     this.clansService.getClanPorNome(termoDaBusca).subscribe
       (result => {
         if ( result.length === 0 ) {
-          console.log('NENHUM CLAN');
           this.messageError = 'Não foi possível encontrar nenhum clan com este nome!';
           this.clan = [];
         } else {
